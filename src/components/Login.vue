@@ -54,7 +54,7 @@ const userLogin = (): void => {
 .img {
   height: 100vh;
   width: 100vw;
-  background-image: url('../src/assets/image.png');
+  background-image: url('../../public/image.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: auto;
