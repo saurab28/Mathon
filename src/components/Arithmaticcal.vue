@@ -24,8 +24,8 @@ const pushStyle = (eachDigit: number): void => {
   //   console.log(eachDigit)
   // displayList.value.push(eachDigit)
   displayList.value = [...displayList.value, eachDigit]
-  showZero.value = true 
- 
+  showZero.value = true
+
 
 }
 
@@ -96,17 +96,16 @@ const deleteItems = (): void => {
   displayList.value = [...displayList.value.slice(0, -1)]
 }
 
-type obj = {
+type DisplayExpose = {
   totalSum: number
-  totalFinalsumList: any
-  togglecont: Boolean
+  totalFinalsumList: (number | string)[]
+  togglecont: boolean
 }
-
 onBeforeUpdate(() => {
   sessionStorage.setItem('displayList', JSON.stringify(displayList.value))
 })
 
-const Dref = useTemplateRef<obj>('equalto')
+const Dref = useTemplateRef<DisplayExpose>('equalto')
 
 const isequalto = (): void => {
   // displayList.value = [Dref.value.totalSum]
@@ -141,27 +140,27 @@ onMounted(() => {
 
 onBeforeMount(() => {
   displayList.value =
-    JSON.parse(sessionStorage.getItem('displayList') || '[]') 
+    JSON.parse(sessionStorage.getItem('displayList') || '[]')
 })
 
 const handleKeyboard = (e : KeyboardEvent) : void => {
-  const key = e.key 
+  const key = e.key
   if (!isNaN(Number(key))){
     pushStyle(Number(key))
      handleKeyboardsty(key)
   }
   else if (key === '+'){
-    pushAdd() 
+    pushAdd()
     handleKeyboardsty(key)
   }
   else if( key === '-'){
-    pushSub() 
+    pushSub()
     handleKeyboardsty(key)
   }
   else if( key === '*'){
-    pushCross() 
+    pushCross()
     handleKeyboardsty(key)
-  } 
+  }
   else if(key === '.'){
     pushPoint()
     handleKeyboardsty(key)
@@ -185,7 +184,7 @@ function handleKeyboardsty(key : string){
    const cont = document.querySelector(`[data-key="${key}"]`) as HTMLBodyElement;
    cont.classList.add("bg-slate-300");
    setTimeout(() => cont.classList.remove("bg-slate-300"), 150);
-  
+
 }
 </script>
 
@@ -199,13 +198,13 @@ function handleKeyboardsty(key : string){
     </div>
 
     <div class="relative">
-      <div v-if="isAuth">
+      <div >
 
         <div v-show="Dref?.togglecont" class="absolute top-[4px] left-[10px]">
              <History/>
         </div>
       </div>
-     
+
       <div class="grid grid-cols-4 gap-2 mt-1">
         <div
           class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
@@ -232,7 +231,7 @@ function handleKeyboardsty(key : string){
         >
           /
         </div>
-      
+
         <div
           v-for="eachDigit in [7, 8, 9]"
           class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
@@ -248,7 +247,7 @@ function handleKeyboardsty(key : string){
         >
           X
         </div>
-      
+
         <div
           v-for="eachDigit in [4, 5, 6]"
           class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
@@ -264,7 +263,7 @@ function handleKeyboardsty(key : string){
         >
           -
         </div>
-      
+
         <div
           v-for="eachDigit in [1, 2, 3]"
           class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
