@@ -23,29 +23,29 @@ const calculateBMI = () => {
 </script>
 
 <template>
-  <div class="bg-slate-400 p-[26px] rounded-lg w-[400px]">
-    <form @submit.prevent="calculateBMI" class="flex flex-col gap-[10px]">
-      <label class="font-semibold">Body Weight ( in kg )</label>
+  <div class="bg-slate-400 p-4 sm:p-6 md:p-[26px] rounded-lg w-full max-w-[400px] mx-auto">
+    <form @submit.prevent="calculateBMI" class="flex flex-col gap-2 sm:gap-3 md:gap-[10px]">
+      <label class="font-semibold text-sm sm:text-base">Body Weight ( in kg )</label>
       <input
-        class="bg-white border-0 h-[40px] rounded-md text-[25px] focus:outline-none"
+        class="bg-white border-0 h-10 sm:h-12 md:h-[40px] rounded-md text-lg sm:text-xl md:text-[25px] focus:outline-none px-2"
         v-model.number="weight"
       />
-      <label class="font-semibold">Height ( in cm )</label>
+      <label class="font-semibold text-sm sm:text-base">Height ( in cm )</label>
       <input
-        class="bg-white border-0 h-[40px] rounded-md text-[25px] focus:outline-none"
+        class="bg-white border-0 h-10 sm:h-12 md:h-[40px] rounded-md text-lg sm:text-xl md:text-[25px] focus:outline-none px-2"
         v-model.number="height"
       />
       <div class="text-center">
-        <button class="mt-[10px] w-[150px] h-[40px] bg-amber-50 rounded-lg text-[18px]">
+        <button class="mt-2 sm:mt-3 md:mt-[10px] w-32 sm:w-36 md:w-[150px] h-10 sm:h-12 md:h-[40px] bg-amber-50 rounded-lg text-sm sm:text-base md:text-[18px] cursor-pointer hover:bg-amber-100 transition-colors">
           Calculate
         </button>
       </div>
     </form>
-    <div class="mt-[28px]">
-      <p class="font-semibold w-[50%] text-right">
+    <div class="mt-4 sm:mt-6 md:mt-[28px] space-y-2">
+      <p class="font-semibold text-right text-sm sm:text-base">
         Body Mass Index(BMI) : <span v-if="bmi">{{ bmi.toFixed(2) }}</span>
       </p>
-      <p class="font-semibold w-[50%] text-right">BMI Category : {{ category }}</p>
+      <p class="font-semibold text-right text-sm sm:text-base">BMI Category : {{ category }}</p>
     </div>
   </div>
 </template>

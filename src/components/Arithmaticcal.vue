@@ -189,7 +189,7 @@ function handleKeyboardsty(key : string){
 </script>
 
 <template>
-  <div class="bg-slate-400 p-3 flex flex-col rounded-[20px] w-[400px]">
+  <div class="bg-slate-400 p-3 flex flex-col rounded-[20px] w-full max-w-[400px] mx-auto">
     <div>
       <!-- <KeepAlive>
         <Display :displayList="displayList" ref="equalto" />
@@ -200,33 +200,33 @@ function handleKeyboardsty(key : string){
     <div class="relative">
       <div >
 
-        <div v-show="Dref?.togglecont" class="absolute top-[4px] left-[10px]">
+        <div v-show="Dref?.togglecont" class="absolute top-[4px] left-[10px] z-10">
              <History/>
         </div>
       </div>
 
       <div class="grid grid-cols-4 gap-2 mt-1">
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="allclear"
           data-key="Escape"
         >
           AC
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center  items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click=""
         >
           ( )
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click=""
         >
           %
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click=""
         >
           /
@@ -234,14 +234,14 @@ function handleKeyboardsty(key : string){
 
         <div
           v-for="eachDigit in [7, 8, 9]"
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushStyle(eachDigit)"
           :data-key="eachDigit"
         >
           {{ eachDigit }}
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushCross"
           data-key="*"
         >
@@ -250,14 +250,14 @@ function handleKeyboardsty(key : string){
 
         <div
           v-for="eachDigit in [4, 5, 6]"
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushStyle(eachDigit)"
           :data-key="eachDigit"
         >
           {{ eachDigit }}
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300   "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushSub"
           data-key="-"
         >
@@ -266,14 +266,14 @@ function handleKeyboardsty(key : string){
 
         <div
           v-for="eachDigit in [1, 2, 3]"
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushStyle(eachDigit)"
           :data-key="eachDigit"
         >
           {{ eachDigit }}
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushAdd"
           data-key="+"
         >
@@ -281,28 +281,28 @@ function handleKeyboardsty(key : string){
         </div>
         <div
           v-for="eachDigit in [0]"
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushStyle(eachDigit)"
           :data-key="eachDigit"
         >
           {{ eachDigit }}
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="pushPoint"
           data-key="."
         >
           .
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="deleteItems"
           data-key="Backspace"
         >
           <font-awesome-icon icon="fa-solid fa-delete-left" />
         </div>
         <div
-          class=" bg-white border-solid  rounded-[10px] border-black text-[40px] flex justify-center items-center active:bg-slate-300  "
+          class="bg-white border-solid rounded-[10px] border-black text-2xl sm:text-3xl md:text-[40px] flex justify-center items-center active:bg-slate-300 h-12 sm:h-14 md:h-16 cursor-pointer"
           @click="isequalto"
           data-key="Enter"
         >

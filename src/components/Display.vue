@@ -154,25 +154,25 @@ defineExpose({ totalSum, totalFinalsumList, togglecont })
 
 <template>
   <div
-    class="h-[30vh] rounded-[20px]  w-full mb-2 border-solid bg-white p-2 flex flex-col justify-between relative"
+    class="h-32 sm:h-40 md:h-[30vh] rounded-[20px] w-full mb-2 border-solid bg-white p-2 flex flex-col justify-between relative"
   >
     <div class="flex flex-col items-end mb-2 absolute left-4 bottom-2">
       <div @click="toogle" v-if="!togglecont">
-        <font-awesome-icon icon="fa-solid fa-clock-rotate-left" class="text-[20px]" />
+        <font-awesome-icon icon="fa-solid fa-clock-rotate-left" class="text-base sm:text-lg md:text-[20px] cursor-pointer" />
       </div>
-      <div v-else @click="toogle"  class="text-[20px]">
+      <div v-else @click="toogle" class="text-base sm:text-lg md:text-[20px] cursor-pointer">
         <font-awesome-icon icon="fa-solid fa-calculator" />
       </div>
     </div>
-    <div class=" h-full flex flex-col justify-end">
-      <div class="flex overflow-hidden justify-end ">
-        <p v-for="eachItem in props.displayList" v-if="!displayZeroequal" class="text-[38px]">
+    <div class="h-full flex flex-col justify-end">
+      <div class="flex overflow-hidden justify-end">
+        <p v-for="eachItem in props.displayList" v-if="!displayZeroequal" class="text-xl sm:text-2xl md:text-3xl lg:text-[38px] break-all">
           {{ eachItem }}
         </p>
-        <p v-else class="text-[38px]">0</p>
+        <p v-else class="text-xl sm:text-2xl md:text-3xl lg:text-[38px]">0</p>
       </div>
       <div class="flex justify-end" v-if="calculateFinalSum.length > 2">
-        <span class="ml-auto block text-[25px]">{{ calculateTotal }}</span>
+        <span class="ml-auto block text-lg sm:text-xl md:text-2xl lg:text-[25px]">{{ calculateTotal }}</span>
       </div>
     </div>
   </div>
