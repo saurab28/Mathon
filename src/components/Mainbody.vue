@@ -55,7 +55,7 @@ const compName = computed(()=>{
                 <p>BMI calculator</p>
             </div>
             <div class="text-center text-[18px] font-playfair space-y-4 hover:font-medium" @click="changeCom('L')">
-                <img :src="Loanimg" class="h-[250px] w-[220px] rounded-[12px]   hover:scale-105 transform transition duration-300 ease-in-out"/>
+                <img :src="Loanimg" class="h-[250px] w-[220px] rounded-[12px]   hover:scale-105 transform transition duration-300 ease-in-out "/>
                 <p>Loan EMI calculator</p>
             </div>
         </div>
