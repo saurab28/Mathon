@@ -43,8 +43,8 @@ export const useCounterStore = defineStore('counter', () => {
       historyobject.value[stdate] = [obj]
     }
 
-    // localStorage.setItem('History', JSON.stringify(historyobject.value))
-    localStorage.setItem('Name',"saurab")
+    localStorage.setItem('History', JSON.stringify(historyobject.value))
+    
   }
 
   return { pushHistory, historyobject }

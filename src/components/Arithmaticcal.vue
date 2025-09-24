@@ -10,7 +10,7 @@ import {
 import { storeToRefs } from 'pinia'
 import Display from '../components/Display.vue'
 import History from '../components/History.vue'
-// import { useCounterStore } from '@/stores/'
+import { useCounterStore } from '@/stores/History'
 import { useAuth } from '@/stores/auth'
 const displayList = ref<(number | string)[]>([])
 const showZero = ref<boolean>(false)

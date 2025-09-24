@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useCounterStore } from '../stores/Record'
+import { useCounterStore } from '../stores/History'
 const store = useCounterStore()
 const {historyobject} = storeToRefs(store)
 
