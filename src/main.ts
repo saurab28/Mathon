@@ -16,8 +16,8 @@ library.add(faUserSecret, faThumbsUp, faFacebook , faXTwitter, faGithub, faClock
 
 
 const app = createApp(App)
-app.use(router)
 app.use(createPinia())
+app.use(router)
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')

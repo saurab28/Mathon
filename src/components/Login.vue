@@ -8,12 +8,12 @@ const router = useRouter()
 const auth = useAuth()
 const name = ref<string>('')
 const password = ref<string>('')
-const { handleLogin } = auth
+// const { handleLogin } = auth
 
 const userLogin = (): void => {
   console.log('hello')
-  const success = handleLogin(name.value, password.value)
-  if (success) {
+  auth.handleLogin(name.value, password.value)
+  if (auth.isAuth) {
     router.push('/calculate')
   }
 }

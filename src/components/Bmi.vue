@@ -42,10 +42,10 @@ const calculateBMI = () => {
       </div>
     </form>
     <div class="mt-4 sm:mt-6 md:mt-[28px] space-y-2">
-      <p class="font-semibold text-right text-sm sm:text-base">
+      <p class="font-semibold  text-sm sm:text-base">
         Body Mass Index(BMI) : <span v-if="bmi">{{ bmi.toFixed(2) }}</span>
       </p>
-      <p class="font-semibold text-right text-sm sm:text-base">BMI Category : {{ category }}</p>
+      <p class="font-semibold  text-sm sm:text-base">BMI Category : {{ category }}</p>
     </div>
   </div>
 </template>

@@ -12,6 +12,7 @@ const userAuthSta = ref<string>("Logout")
 
 const handleAuth = () => {
   router.push('/')
+  authStore.handleLogout()
 }
 
 </script>
