@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, reactive, ref, watchEffect, watch, onBeforeUnmount, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-const togglecont = ref<Boolean>(false)
-const displayZeroequal = ref<Boolean>(false)
+const togglecont = ref<boolean>(false)
+const displayZeroequal = ref<boolean>(false)
 const props = defineProps<{ displayList: (string | number)[]; showZero: Boolean }>()
 
 const calculateTerms = (arr: (number | string)[]): number => {
@@ -176,5 +176,5 @@ defineExpose({ totalSum, totalFinalsumList, togglecont })
       </div>
     </div>
   </div>
-</template> 
+</template>
 

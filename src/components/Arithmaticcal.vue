@@ -2,9 +2,7 @@
 import {
   ref,
   useTemplateRef,
-  onBeforeUnmount,
   onBeforeMount,
-  watchEffect,
   onBeforeUpdate,
   onMounted,
   onUnmounted
@@ -12,10 +10,10 @@ import {
 import { storeToRefs } from 'pinia'
 import Display from '../components/Display.vue'
 import History from '../components/History.vue'
-import { useCounterStore } from '../stores/History'
+// import { useCounterStore } from '@/stores/'
 import { useAuth } from '@/stores/auth'
 const displayList = ref<(number | string)[]>([])
-const showZero = ref<Boolean>(false)
+const showZero = ref<boolean>(false)
 const counterstore = useCounterStore()
 const authStore = useAuth()
 const {isAuth} = storeToRefs(authStore)
@@ -24,7 +22,7 @@ const pushStyle = (eachDigit: number): void => {
   //   console.log(eachDigit)
   // displayList.value.push(eachDigit)
   displayList.value = [...displayList.value, eachDigit]
-  showZero.value = true
+  showZero.value = false
 
 
 }
@@ -109,17 +107,18 @@ const Dref = useTemplateRef<DisplayExpose>('equalto')
 
 const isequalto = (): void => {
   // displayList.value = [Dref.value.totalSum]
-  if (Dref.value){
-    if (Dref.value.totalSum !== 0) {
-    // displayZeroequal.value = true
-    displayList.value = [Dref.value.totalSum]
-    // showZero.value = false
-    } else {
-      displayList.value = []
-    }
+  if (!Dref.value){
+    return
+  }
+  if (Dref.value.totalSum !== 0) {
+  // displayZeroequal.value = true
+  displayList.value = [Dref.value.totalSum]
+  // showZero.value = false
+  } else {
+    displayList.value = []
     showZero.value = true
-    counterstore.pushHistory([Dref.value.totalFinalsumList, Dref.value.totalSum])
-    }
+  }
+  counterstore.pushHistory([Dref.value.totalFinalsumList, Dref.value.totalSum])
 }
 
 const allclear = (): void => {
